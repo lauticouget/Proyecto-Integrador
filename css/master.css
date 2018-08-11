@@ -43,6 +43,13 @@ body{
     border: solid black 1px;
     border-radius: 50%;
 }
+/* ENCABEZADO DEL FORMULARIO***********************************/
+img {
+    max-width: 100%;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-timing-function: linear;;
+    animation-fill-mode: forwards;
 /*ACCORDION ********************************************************************************************/
 .accordion {
     background-color: #eee;
