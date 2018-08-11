@@ -4,25 +4,17 @@
 }
 /*BODY***************************************************************************************************************/
 body{
-<<<<<<< HEAD
-    background-image: url(../images/PuntoVet.png);
+    background-image: url(../images/background01.jpeg);
     background-size: 5% auto;
     font-family: sans-serif;
     
 }
 .bodyform{
-    background-size: 5% auto;
-    font-family: sans-serif;
+    margin-top: 50px;
+    font-family:sans-serif;
+    color: rgb(20, 20, 207);
 }
 
-=======
-    background-image: url(../images/background01.jpeg);
-    background-repeat: repeat;
-    font-family: sans-serif;
-    
-}
-/*LOGIN**************************************************************************************************************/
->>>>>>> e914197b4b1b23df36534f646f5d6a0ce0d0a5cb
 .userypass{
     background-color: rgb(224, 24, 24);
     color: rgb(255, 255, 255);
@@ -51,14 +43,6 @@ body{
     border: solid black 1px;
     border-radius: 50%;
 }
-.encabezado{
-    /* ES PARA ENCABEZADO DE FORMULARIO */
-    background: #ffffff;
-    position: fixed;
-    z-index: 999;
-    border: solid #E9E9E9;
-    width: 100%;
-}
 /*ACCORDION ********************************************************************************************/
 .accordion {
     background-color: #eee;
@@ -79,6 +63,9 @@ body{
     background-color: white;
     display:none;
     overflow:hidden;
+}
+.h2form {
+    color: rgb(73, 160, 73);
 }
 /* FOOTER ***********************************************************************************************************/
 footer{
