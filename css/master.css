@@ -2,7 +2,9 @@
     box-sizing: border-box;
 
 }
+/*BODY***************************************************************************************************************/
 body{
+<<<<<<< HEAD
     background-image: url(../images/PuntoVet.png);
     background-size: 5% auto;
     font-family: sans-serif;
@@ -13,6 +15,14 @@ body{
     font-family: sans-serif;
 }
 
+=======
+    background-image: url(../images/background01.jpeg);
+    background-repeat: repeat;
+    font-family: sans-serif;
+    
+}
+/*LOGIN**************************************************************************************************************/
+>>>>>>> e914197b4b1b23df36534f646f5d6a0ce0d0a5cb
 .userypass{
     background-color: rgb(224, 24, 24);
     color: rgb(255, 255, 255);
@@ -35,11 +45,42 @@ body{
     max-width: 150px;
     margin: 5px 0 5px 0;
 }
+/*LOGO*************************************************************************************************************/
 .logo{
     margin-top: 10px;
     border: solid black 1px;
     border-radius: 50%;
 }
+.encabezado{
+    /* ES PARA ENCABEZADO DE FORMULARIO */
+    background: #ffffff;
+    position: fixed;
+    z-index: 999;
+    border: solid #E9E9E9;
+    width: 100%;
+}
+/*ACCORDION ********************************************************************************************/
+.accordion {
+    background-color: #eee;
+    color:#444;
+    cursor:pointer;
+    padding:18px;
+    width:100%;
+    text-align: left;
+    border:none;
+    outline: none;
+    transition: 0.4s;
+}
+.active, .accordion:hover {
+    background-color:#ccc;
+}
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display:none;
+    overflow:hidden;
+}
+/* FOOTER ***********************************************************************************************************/
 footer{
     position: absolute;
     bottom: 0;
