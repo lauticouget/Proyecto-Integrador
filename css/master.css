@@ -2,13 +2,14 @@
     box-sizing: border-box;
 
 }
+/*BODY***************************************************************************************************************/
 body{
-    background-image: url(../images/bg.png);
-    background-size: 50% auto;
+    background-image: url(../images/background01.jpeg);
+    background-repeat: repeat;
     font-family: sans-serif;
     
 }
-
+/*LOGIN**************************************************************************************************************/
 .userypass{
     background-color: rgb(224, 24, 24);
     color: rgb(255, 255, 255);
@@ -31,11 +32,34 @@ body{
     max-width: 150px;
     margin: 5px 0 5px 0;
 }
+/*LOGO*************************************************************************************************************/
 .logo{
     margin-top: 10px;
     border: solid black 1px;
     border-radius: 50%;
 }
+/*ACCORDION ********************************************************************************************/
+.accordion {
+    background-color: #eee;
+    color:#444;
+    cursor:pointer;
+    padding:18px;
+    width:100%;
+    text-align: left;
+    border:none;
+    outline: none;
+    transition: 0.4s;
+}
+.active, .accordion:hover {
+    background-color:#ccc;
+}
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display:none;
+    overflow:hidden;
+}
+/* FOOTER ***********************************************************************************************************/
 footer{
     position: absolute;
     bottom: 0;
