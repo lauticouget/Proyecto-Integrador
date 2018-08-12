@@ -40,8 +40,9 @@ body{
 /*LOGO*************************************************************************************************************/
 .logo{
     margin-top: 10px;
-    border: solid black 1px;
-    border-radius: 50%;
+    /* border: solid black 1px; */
+    /* border-radius: 50%; */
+    max-height: 200px;
 }
 /* ENCABEZADO DEL FORMULARIO***********************************/
 img {
@@ -50,6 +51,7 @@ img {
     animation-delay: 0s;
     animation-timing-function: linear;;
     animation-fill-mode: forwards;
+}
 /*ACCORDION ********************************************************************************************/
 .accordion {
     background-color: #eee;
