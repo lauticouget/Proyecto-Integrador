@@ -8,38 +8,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Punto Vet Login</title>
 </head>
-<body class="container-fluid">
-    <logo class="row mx-auto d-flex">
+<div class="row mx-auto d-flex">
         <img src="images/Muestra.logo-puntoVet-original.jpg" alt="logo" class="mx-auto logo">
-    </logo>
-    <username class="  row  mx-auto ">
-        <p      class="col-xs-4 col-sm-4 col-md-12 col-lg-12 text-center mx-auto userypass">Username</p>
-        <input  class="col-xs-4 col-sm-6 col-md-12 col-lg-12 mx-auto userinput " type="text">
-        <p      class="col-xs-4 col-sm-4 col-md-12 col-lg-12 mx-auto text-center userypass ">Password</p>
-        <input  class="col-xs-12 col-sm-6 col-md-12 col-lg-12 mx-auto userinput " type="text">
-
-        <button class="col-xs-4 col-sm-4 col-md-12 col-lg-12  mx-auto userbuttons" type="submit">Send</button>
-        <button class="col-xs-4 col-sm-4 col-md-12 col-lg-12 mx-auto userbuttons" type="reset">Cancel</button>
-
-
-    </username>
-    <footer class="col-sm-12 col-xs-12">
-        <fnav class="row mx-auto footer-nav">
-            <a href="#" class="col-lg-2 col-md-4 col-xs-12 col-sm-12 text-center mx-auto">Contactanos</a>
-            <a href="#" class="col-lg-2 col-md-4 col-xs-12 col-sm-12 text-center mx-auto">Avisos Legales</a>
-            <a href="#" class="col-lg-2 col-md-4 col-xs-12 col-sm-12 text-center mx-auto">Empleo</a>
-            <a href="#" class="col-lg-2 col-md-4 col-xs-12 col-sm-12 text-center mx-auto">Sobre Nosotros</a>
-            <a href="#" class="col-lg-2 col-md-4 col-xs-12 col-sm-12 text-center mx-auto">Envíos</a>
-            <a href="#" class="col-lg-2 col-md-4 col-xs-12 col-sm-12 text-center mx-auto">Métodos de Pago</a>
-            <a href="#" class="col-lg-2 col-md-4 col-xs-12 col-sm-12 text-center mx-auto">Condiciones de Venta</a>
-
-        </fnav>
-
-
-    </footer>
-
-    
+    </div>
+<body class="container-fluid">
+        <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-heading">
+                        <h2 class="text-center">Login</h2>
+                    </div>
+                    <hr />
+                    <div class="modal-body">
+                        <form action="" role="form" method="POST">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                    </span>
+                                    <input type="text" class="form-control" placeholder="User Name" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-lock"></span>
+                                    </span>
+                                    <input type="password" class="form-control" placeholder="Password" />
+        
+                                </div>
+        
+                            </div>
+        
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-success btn-lg">Login</button>
+                                <a href="#" class="btn btn-link">forget Password</a>
+                            </div>
+        
+                        </form>
+                    </div>
+                </div>
+            </div>
 </body>
 </html>
