@@ -2,6 +2,10 @@
     box-sizing: border-box;
 
 }
+html, body {
+    margin:0px;
+    height:100%;
+}
 /*BODY***************************************************************************************************************/
 body{
     background-image: url(../images/background01.jpeg);
@@ -16,15 +20,18 @@ body{
 }
 
 .userypass{
-    background-color: rgb(0, 99, 30);
+    background-color: rgb(1, 80, 24);
     color: rgb(255, 255, 255);
     text-transform: capitalize;
     font-weight: bold;
+    font-size: 20px;;
     border-radius: 5%;
     min-width: 150px ; 
-    max-width: 150px;
-    
-    
+    max-width: 150px ;
+    margin-top: 15px;;
+}
+.userypass:hover{
+    background-color:  rgb(35, 179, 76);
 }
 .userinput{
     max-width: 250px ;
@@ -37,13 +44,18 @@ body{
     max-width: 150px;
     margin: 5px 0 5px 0;
 }
+.form-container{
+    background-color:rgba(104, 182, 255, 0.726);
+    border-radius: 3%;
+    margin-top: 10px;
+}
 /*LOGO*************************************************************************************************************/
 .logo{
     margin-top: 10px;
-    /* border: solid black 1px; */
-    /* border-radius: 50%; */
     max-height: 200px;
+    border-radius: 20%;
 }
+
 /* ENCABEZADO DEL FORMULARIO***********************************/
 img {
     max-width: 100%;
@@ -77,9 +89,10 @@ img {
     color: rgb(73, 160, 73);
 }
 /* FOOTER ***********************************************************************************************************/
-footer{
-    position: absolute;
-    bottom: 0;
+.footer{
+    background-color: rgba(37, 255, 255, 0.425);
+    margin-top: 10px;
+    border-radius: 2%;
 }
 
 .footer-nav a{
@@ -88,6 +101,7 @@ footer{
     background-color: rgb(2, 0, 114);
     margin-bottom: 1%;
     max-width: 200px;
+    border-radius: 5%;
     
 }
 .footer-nav a:hover{

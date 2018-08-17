@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/reset.css">
@@ -10,23 +11,129 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body class="container-fluid">
-    <logo class="row mx-auto d-flex">
+<body class="container">
+    <div class="row mx-auto d-flex">
         <img src="images/Muestra.logo-puntoVet-original.jpg" alt="logo" class="mx-auto logo">
-    </logo>
-    <username class="  row  mx-auto ">
-        <p      class="col-xs-4 col-sm-4 col-md-12 col-lg-12 text-center mx-auto userypass">Username</p>
-        <input  class="col-xs-4 col-sm-6 col-md-12 col-lg-12 mx-auto userinput " type="text">
-        <p      class="col-xs-4 col-sm-4 col-md-12 col-lg-12 mx-auto text-center userypass ">Password</p>
-        <input  class="col-xs-12 col-sm-6 col-md-12 col-lg-12 mx-auto userinput " type="text">
+    </div>
+    <div class="container form-container">
+        <form action="#" class="  row  mx-auto ">
+            <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12 mx-auto text-center">
+                <label  class="userypass">Username</label>
+            </div>
+            <div class="col-xs-4 col-sm-6 col-md-12 col-lg-12 text-center mx-auto">
+                <input  class=" userinput " type="text">
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12 mx-auto text-center">
+                <label  class="userypass">password</label>
+            </div>
+            <div class="col-xs-4 col-sm-6 col-md-12 col-lg-12 text-center mx-auto">
+                            <input  class=" userinput " type="text">
+            </div>
+            
+            <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12 mx-auto text-center ">
+                <button class="userbuttons" type="submit">Send</button>
+            </div >
+            <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12 mx-auto text-center ">
+                    <button class="userbuttons" type="submit">Cancel</button>
+            </div >
+        </form>
+    </div>
+    <footer class=" footer pt-4">
 
-        <button class="col-xs-4 col-sm-4 col-md-12 col-lg-12  mx-auto userbuttons" type="submit">Send</button>
-        <button class="col-xs-4 col-sm-4 col-md-12 col-lg-12 mx-auto userbuttons" type="reset">Cancel</button>
+            
+            <div class="container-fluid text-center text-md-left">
+              <div class="row">
+                <div class="col-md-6">
+                  <h5 class="text-uppercase">No te quedes con Dudas</h5>
+                  <p>Somos el 1° Pet Shop Online de Argentina y ofrecemos una experiencia cómoda en las compras para tus mascotas. Podes comprar las 24hs desde tu smart phone o compu. Tenemos la mejor selección de productos que no se consiguen en cualquier pet shop.</p>
+                </div>
 
+                <div class="col-md-2 ">
+                    <h5 class="text-uppercase">Mi cuenta</h5>
+        
+                    <ul class="list-unstyled">
+                      <li>
+                        <a href="#!">Mi cuenta</a>
+                      </li>
+                      <li>
+                        <a href="#!">Preguntas Historial de Pedidos</a>
+                      </li>
+                      <li>
+                        <a href="#!">Mis direcciones</a>
+                      </li>
+                      <li>
+                        <a href="#!">Mis favoritos</a>
+                      </li>
+                      <li>
+                          <a href="#!">Mis Avisos</a>
+                      </li>
+                    </ul>
+        
+                  </div>
 
-    </username>
-    <footer class="col-sm-12 col-xs-12">
-        <fnav class="row mx-auto footer-nav">
+                  <div class="col-md-2 mb-md-0 mb-3">
+
+                    <h5 class="text-uppercase">comprar</h5>
+        
+                    <ul class="list-unstyled">
+                      <li>
+                        <a href="#!">Gatos</a>
+                      </li>
+                      <li>
+                        <a href="#!">Perros</a>
+                      </li>
+                      <li>
+                        <a href="#!">Otas mascotas</a>
+                      </li>
+                      <li>
+                        <a href="#!">Ofertas</a>
+                      </li>
+                    </ul>
+        
+                  </div>
+
+                  <div class="col-md-2 mb-md-0 mb-3 ">
+
+                      <h5 class="text-uppercase">comprar</h5>
+          
+                      <ul class="list-unstyled" >
+                        <li>
+                          <a  href="#!">Envíos a todo el país</a>
+                        </li>
+                        <li>
+                          <a  href="#!">Cómo comprar</a>
+                        </li>
+                        <li>
+                          <a  href="#!">Mapas del Sitio</a>
+                        </li>
+                        <li>
+                          <a  href="#!">Preguntas Frecuentes</a>
+                        </li>
+                        <li>
+                          <a  href="#!">Contactanos</a>
+                        </li>
+                        
+                      </ul>
+                      
+                  </div>
+                  
+        
+              </div>
+              <!-- Grid row -->
+        
+            </div>
+            <!-- Footer Links -->
+        
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2018 Copyright:
+              <a href="https://mdbootstrap.com/bootstrap-tutorial/"> PuntoVet.com.ar</a>
+            </div>
+            <!-- Copyright -->
+        
+          </footer>
+    
+    <!-- <footer class=" footer font-small page-footer blue">
+        <div class="row mx-auto footer-nav">
             <a href="#" class="col-lg-2 col-md-4 col-xs-12 col-sm-12 text-center mx-auto">Contactanos</a>
             <a href="#" class="col-lg-2 col-md-4 col-xs-12 col-sm-12 text-center mx-auto">Avisos Legales</a>
             <a href="#" class="col-lg-2 col-md-4 col-xs-12 col-sm-12 text-center mx-auto">Empleo</a>
@@ -35,10 +142,13 @@
             <a href="#" class="col-lg-2 col-md-4 col-xs-12 col-sm-12 text-center mx-auto">Métodos de Pago</a>
             <a href="#" class="col-lg-2 col-md-4 col-xs-12 col-sm-12 text-center mx-auto">Condiciones de Venta</a>
 
-        </fnav>
+        </div>
 
 
-    </footer>
+    </footer> -->
+    <!-- Footer -->
+
+      <!-- Footer -->       
 
     
 </body>
