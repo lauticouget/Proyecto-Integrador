@@ -15,10 +15,11 @@
     <img src="images/Muestra.logo-puntoVet-original.jpg" alt="logo" class="hero-image">
     <nav id="nav">
             <ul class="navbar navbar-btn text-center">
-                <li> <a href="index.html">Inicio</a></li>
-                <li> <a href="login.html">Ingreso</a></li>
-                <li> <a href="formulario.html">Registrate</a></li>
-                <li> <a href="faq.html">Preguntas Frecuentes</a></li>
+                <li> <a href="index.php">Inicio</a></li>
+                <li> <a href="login.php">Ingreso</a></li>
+                <li> <a href="formulario.php">Contáctanos</a></li>
+                <li> <a href="faq.php">Preguntas Frecuentes</a></li>
+                <li> <a href="register.php">Registrate</a></li>
             </ul>
         </nav>
     <h2>Preguntas Frecuentes</h2>

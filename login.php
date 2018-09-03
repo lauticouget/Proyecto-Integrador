@@ -2,39 +2,43 @@
 <html lang="en">
 <head>
     
-    <link rel="stylesheet" href="css/login.css">
+
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/login.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Login pet</title>
 </head>
 <body class="container">
     <div class="row mx-auto d-flex">
         <img src="images/Muestra.logo-puntoVet-original.jpg" alt="logo" class="mx-auto logo">
     </div>
+    <div class="row d-flex  d-block">
+      <a class="boton_inicio"  href="index.php">Ir al inicio</a>
+    </div>
     <div class="container form-container">
-        <form action="#" class="  row  mx-auto ">
+        <form action="" class="  row  mx-auto ">
             <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12 mx-auto text-center">
                 <label  class="userypass">Username</label>
             </div>
             <div class="col-xs-4 col-sm-6 col-md-12 col-lg-12 text-center mx-auto">
-                <input  class=" userinput " type="text">
+                <input  class=" userinput " type="text" name="username">
             </div>
             <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12 mx-auto text-center">
                 <label  class="userypass">password</label>
             </div>
             <div class="col-xs-4 col-sm-6 col-md-12 col-lg-12 text-center mx-auto">
-                            <input  class=" userinput " type="text">
+                            <input  class=" userinput " type="password" name="password">
             </div>
             
             <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12 mx-auto text-center ">
                 <button class="userbuttons" type="submit">Send</button>
             </div >
             <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12 mx-auto text-center ">
-                    <button class="userbuttons" type="submit">Cancel</button>
+                    <button class="userbuttons" type="reset">Cancel</button>
             </div >
         </form>
     </div>
