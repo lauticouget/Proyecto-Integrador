@@ -1,3 +1,7 @@
+<?php
+include_once('functions.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,6 +43,7 @@
             </div >
             <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12 mx-auto text-center ">
                     <button class="userbuttons" type="reset">Cancel</button>
+                    <a id="registrate" style="text-decoration: none; color:black" href="register.php">Registrate</a>
             </div >
         </form>
     </div>

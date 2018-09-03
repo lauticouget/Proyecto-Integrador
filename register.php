@@ -1,4 +1,24 @@
+<?php
+include_once('functions.php');
+
+if($_POST){
+	$errors=validate($_POST);
+	
+	if($errors==[]){
+		$user=createUser($_POST);
+		saveUser($user);
+		header('location: login.php');
+		
+
+
+	}
+
+}
+
+
+?>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
@@ -44,7 +64,10 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+									<input type="text" class="form-control" name="name" id="name" value="<?= !isset($errors['name'])? keepValue('name') : "" ?>" placeholder="Enter your Name"/>
+									<?php  if(isset($errors['name'])) {?>
+										<span class="alert alert-danger"><?php echo $errors['name'] ?> </span>
+									<?php } ?>
 								</div>
 							</div>
 						</div>
@@ -53,8 +76,11 @@
 							<label for="email" class="cols-sm-2 control-label">Your Email</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="flase"></i></span>
+									<input type="text" class="form-control" name="email" id="email"  value="<?= !isset($errors['email'])? keepValue('email') : "" ?>" placeholder="Enter your Email"/>
+									<?php  if(isset($errors['email'])) {?>
+										<span class="alert alert-danger"><?php echo $errors['email'] ?> </span>
+									<?php } ?>
 								</div>
 							</div>
 						</div>
@@ -64,7 +90,10 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+									<input type="text" class="form-control" name="username" id="username"  value="<?= !isset($errors['username'])? keepValue('username') : "" ?>" placeholder="Enter your Username"/>
+									<?php  if(isset($errors['username'])) {?>
+										<span class="alert alert-danger"><?php echo $errors['username'] ?> </span>
+									<?php } ?>
 								</div>
 							</div>
 						</div>
@@ -75,6 +104,9 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
 									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+									<?php  if(isset($errors['password'])) {?>
+										<span class="alert alert-danger"><?php echo $errors['password'] ?> </span>
+									<?php } ?>
 								</div>
 							</div>
 						</div>
@@ -85,12 +117,14 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
 									<input type="password" class="form-control" name="cpassword" id="cpassword"  placeholder="Confirm your Password"/>
+									<?php  if(isset($errors['cpassword'])) {?>
+										<span class="alert alert-danger"><?php echo $errors['cpassword'] ?> </span>
+									<?php } ?>
 								</div>
 							</div>
 						</div>
-
 						<div class="form-group ">
-							<button type="button" class="btn btn-success btn-lg btn-block login-button">Register</button>
+							<button type="submit" class="btn btn-success btn-lg btn-block login-button">Register</button>
 						</div>
 						<div class="login-register">
 				            <a class="btn btn-dark" href="index.php">Login</a>

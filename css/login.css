@@ -119,5 +119,13 @@ img {
     border-radius: 6px;
     border: 2px solid #073a00;
   }
+  #registrate:hover{
+      font-size: 150%;
+      font-weight: bold;
+      color: rgb(178, 206, 179)!important;
+      border: solid rgb(0, 0, 0) 2px;
+      border-radius: 5%;
+      background-color: #bd0000;
+  }
 
   
