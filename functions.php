@@ -1,4 +1,16 @@
 <?php
+session_start();
+
+$session=session_status();
+function dd($var)
+    {
+        echo"<pre>";
+        die(var_dump($var));
+        echo "</pre>";
+    }
+
+
+
 
 function keepValue($userInput)
 {
@@ -75,20 +87,21 @@ function createUser($data)
 }
 function generateId()
 {
-    $file=file_get_contents('users,json');
+    $file= file_get_contents('users.json');
 
-    if($file=="")
-    {
+    if($file == ""){
         return 1;
-    }else{
-    $users=explode($file);
+    }
+
+    $users=explode(PHP_EOL , $file);
     array_pop($users);
     $lastUser=$users[count($users)-1];
     $lastUser=json_decode($lastUser, true);
     
-    return $lastUser['id']+1 ;
-    }
+    return $lastUser["id"]+1 ;
+    
 }
+
 function saveUser($user)
 {
     $jsonUser=json_encode($user);
@@ -97,6 +110,49 @@ function saveUser($user)
 }
 
 
+
+function decodeUsers()
+{
+    $jsonFile = file_get_contents('users.json');
+    $jsonUsers = explode(PHP_EOL , $jsonFile);
+    array_pop($jsonUsers);
+
+    foreach($jsonUsers as $jsonUser)
+    {
+        
+        $users[]=json_decode($jsonUser, true);
+    }
+
+    return $users;
+    
+}
+
+function findUser(array $data)
+{
+    $users=decodeUsers();
+
+    foreach($users as $user)
+    {
+        if($user['username'] == $data['username'])
+        {    
+            return $user;
+            exit;
+        }
+    }
+    
+}
+
+function checkPassword($data, $foundUser)
+{
+    if(password_verify($data['password'], $foundUser['password']))
+    {
+        return true;
+    }else{
+        return null;
+    }
+    
+
+}
 
 
 ?>

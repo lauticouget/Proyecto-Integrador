@@ -1,3 +1,8 @@
+<?php 
+include_once('functions.php');
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +17,9 @@
     <title>Inicio</title>
 </head>
 <body class="container-fluid">
+    <span class="alert alert-danger"><?php    $session    ?></span>
+    
+    
     <img class="img-fluid hero-image" src="images/Muestra.logo-puntoVet-original.jpg" alt="logo" class="hero-image">
     <nav id="nav">
         <ul class="navbar navbar-btn text-center">
@@ -25,6 +33,7 @@
     <div class="container-fluid text-center"id="hero">
         <img class=" img-fluid" src="images/hero.jpg">
     </div>
+    
     
 </body>
 </html>

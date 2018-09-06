@@ -1,6 +1,19 @@
 <?php
 include_once('functions.php');
 
+
+if($_POST)
+{
+  $foundUser = findUser($_POST);
+ 
+  if ($foundUser != null)
+  {$dd=checkPassword($_POST, $foundUser);
+    if(checkPassword($_POST, $foundUser))
+    {
+      header('Location: index.php');
+    }
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +37,7 @@ include_once('functions.php');
       <a class="boton_inicio"  href="index.php">Ir al inicio</a>
     </div>
     <div class="container form-container">
-        <form action="" class="  row  mx-auto ">
+        <form action="" method="post" class="  row  mx-auto ">
             <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12 mx-auto text-center">
                 <label  class="userypass">Username</label>
             </div>
