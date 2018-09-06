@@ -17,8 +17,9 @@ include_once('functions.php');
     <title>Inicio</title>
 </head>
 <body class="container-fluid">
-    <span class="alert alert-danger"><?php    $session    ?></span>
-    
+    <div class="container-block">
+    <span class="alert alert-danger"><?php  echo giveSession();     ?></span>
+    </div>
     
     <img class="img-fluid hero-image" src="images/Muestra.logo-puntoVet-original.jpg" alt="logo" class="hero-image">
     <nav id="nav">

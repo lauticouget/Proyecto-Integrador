@@ -1,7 +1,17 @@
 <?php
 session_start();
+function giveSession(){
+    if(session_status()==0)
+    {
+        return "session disabled";
+    }elseif(session_status()==1){
+        return "Not Loged";
+    }elseif(session_status()==2){
+        return "Loged";
+    }
+}
 
-$session=session_status();
+
 function dd($var)
     {
         echo"<pre>";
@@ -151,6 +161,27 @@ function checkPassword($data, $foundUser)
         return null;
     }
     
+
+}
+
+function Login($foundUser)
+{
+    $_SESSION['email']=$foundUser['email'];
+    setcookie("email", $foundUser['email'], time()+3600);
+}
+
+function loginController()
+{
+    if(isset($_SESSION['email']))
+    {
+        return true;
+    }elseif(isset($_COOKIE['email']))
+    {
+        $_SESSION['email']=$_COOKIE['email'];
+        return true;
+    }else{
+        return false;
+    }
 
 }
 

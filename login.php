@@ -7,11 +7,16 @@ if($_POST)
   $foundUser = findUser($_POST);
  
   if ($foundUser != null)
-  {$dd=checkPassword($_POST, $foundUser);
+  {
     if(checkPassword($_POST, $foundUser))
     {
-      header('Location: index.php');
+      login($foundUser);
     }
+  }
+  if(loginController())
+  {
+    
+    header('location: index.php');
   }
 }
 ?>
