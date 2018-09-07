@@ -154,14 +154,7 @@ function findUser(array $data)
 
 function checkPassword($data, $foundUser)
 {
-    if(password_verify($data['password'], $foundUser['password']))
-    {
-        return true;
-    }else{
-        return null;
-    }
-    
-
+    return password_verify($data['password'], $foundUser['password']);
 }
 
 function Login($foundUser)

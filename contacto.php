@@ -1,30 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Formulario de Contacto</title>
-</head>
-<body class="bodyform">
-        <div class="container bg-light">
-                <img src="images/Muestra.logo-puntoVet-original.jpg" alt="logo" class="hero-image">
-            <fieldset class="form-group" >
-    <nav id="nav">
-        <ul class="navbar navbar-btn text-center">
-            <li> <a href="index.php">Inicio</a></li>
-            <li> <a href="login.php">Ingreso</a></li>
-            <li> <a href="formulario.php">Contáctanos</a></li>
-            <li> <a href="faq.php">Preguntas Frecuentes</a></li>
-            <li> <a href="register.php">Registrate</a></li>
-        </ul>
-    </nav>
+<?php
+include_once('functions.php');
+include_once('head.php');
+?>
+<body>
+    <?php 
+    include_once('navBar.php');
+    ?>
+    <div class="container">
+        <img src="images/Muestra.logo-puntoVet-original.jpg" alt="logo" class="hero-image">
+          
+        <form style="margin-top:20px;" action="imprimir.php" method="post">
+            <fieldset class="form-group" style = "background-color: white;" >
                 <h2 class="h2form"> Formulario de Contacto</h2>
-        <form action="imprimir.php" method="post">
+
                 <div class="form-row">
                     <div class="col">
                         <label for="nombre">Nombre:</label>
@@ -95,7 +85,8 @@
         </select>
         <input class="btn btn-primary" type="submit">
     </form>
-</seccion>
+    </div>
+
 </div>
 </body>
 </html>

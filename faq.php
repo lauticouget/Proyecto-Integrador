@@ -1,27 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-
-    <title>Preguntas Frecuentes</title>
-</head>
+<?php
+include_once('functions.php');
+include_once('head.php');
+?>
 <body class="container-fluid">
+    <?php
+    include_once('navBar.php');
+    ?>
     <img src="images/Muestra.logo-puntoVet-original.jpg" alt="logo" class="hero-image">
-    <nav id="nav">
-            <ul class="navbar navbar-btn text-center">
-                <li> <a href="index.php">Inicio</a></li>
-                <li> <a href="login.php">Ingreso</a></li>
-                <li> <a href="formulario.php">Contáctanos</a></li>
-                <li> <a href="faq.php">Preguntas Frecuentes</a></li>
-                <li> <a href="register.php">Registrate</a></li>
-            </ul>
-        </nav>
+    
     <h2>Preguntas Frecuentes</h2>
 
     <button class="accordion">Como reservo un turno para bañar a mi perro?</button>

@@ -8,17 +8,25 @@ if($_POST)
  
   if ($foundUser != null)
   {
-    if(checkPassword($_POST, $foundUser))
-    {
-      login($foundUser);
-    }
+    $checkedPassword=checkPassword($_POST,$foundUser);
+    if($checkedPassword) 
+      {        
+        login($foundUser);
+        
+        if(loginController())
+          {
+            header('location: index.php');
+          }
+      }
+      
   }
-  if(loginController())
+  
+}
+if(isset($_SESSION['email']))
   {
-    
     header('location: index.php');
   }
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +42,8 @@ if($_POST)
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login pet</title>
 </head>
-<body class="container">
+
+<body  class="container">
     <div class="row mx-auto d-flex">
         <img src="images/Muestra.logo-puntoVet-original.jpg" alt="logo" class="mx-auto logo">
     </div>
@@ -42,12 +51,12 @@ if($_POST)
       <a class="boton_inicio"  href="index.php">Ir al inicio</a>
     </div>
     <div class="container form-container">
-        <form action="" method="post" class="  row  mx-auto ">
+        <form action="" method="post" name="loginForm " class="  row  mx-auto ">
             <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12 mx-auto text-center">
                 <label  class="userypass">Username</label>
             </div>
             <div class="col-xs-4 col-sm-6 col-md-12 col-lg-12 text-center mx-auto">
-                <input  class=" userinput " type="text" name="username">
+                <input  class=" userinput " autofocus type="text" name="username">
             </div>
             <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12 mx-auto text-center">
                 <label  class="userypass">password</label>
@@ -55,6 +64,22 @@ if($_POST)
             <div class="col-xs-4 col-sm-6 col-md-12 col-lg-12 text-center mx-auto">
                             <input  class=" userinput " type="password" name="password">
             </div>
+
+            <?php if ($_POST)
+                  {
+                    if ($foundUser == null || !$checkedPassword )
+                      { ?>
+                      <div  style="padding: 10px  0px 10px 0px;" class="col-xs-4 col-sm-6 col-md-12 col-lg-12 mx-auto text-center">
+                        <span class="alert alert-danger  text-center">
+                              Usuario o contraseña Incorrectas.
+                        </span>
+                      </div>
+                        
+
+                      <?php }
+
+
+                  } ?>
             
             <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12 mx-auto text-center ">
                 <button class="userbuttons" type="submit">Send</button>
