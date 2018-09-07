@@ -167,7 +167,7 @@ function checkPassword($data, $foundUser)
 function Login($foundUser)
 {
     $_SESSION['email']=$foundUser['email'];
-    setcookie("email", $foundUser['email'], time()+3600);
+    setcookie('email', $foundUser['email'], time()+3600);
 }
 
 function loginController()
@@ -185,5 +185,15 @@ function loginController()
 
 }
 
+
+function logout()
+    {
+        session_destroy();
+        setcookie('email', "", time()-1);
+    }
+
+
+
+    
 
 ?>
