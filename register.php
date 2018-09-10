@@ -4,13 +4,20 @@ include_once('functions.php');
 if($_POST){
 	$errors=validate($_POST);
 	
+	
+	
 	if($errors==[]){
 		$user=createUser($_POST);
-		saveUser($user);
-		header('location: login.php');
+		$avatarErrors=uploadAvatar($user);
+		$totalErrors=array_merge($errors, $avatarErrors);
 		
-
-
+		if($totalErrors== [])
+			{
+				saveUser($user);
+				header('location: login.php');
+			}
+		
+		
 	}
 
 }
@@ -57,7 +64,7 @@ if($_POST){
 	               	</div>
 	            </div> 
 				<div class="main-login main-center">
-					<form class="form-horizontal" method="post" action="">
+					<form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
 						
 						<div class="form-group">
 							<label for="name" class="cols-sm-2 control-label">Your Name</label>
@@ -68,6 +75,18 @@ if($_POST){
 									<?php  if(isset($errors['name'])) {?>
 										<span class="alert alert-danger"><?php echo $errors['name'] ?> </span>
 									<?php } ?>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Title</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<select name="title">
+										<option value="Sr">Sr.</option>
+										<option value="Sra">Sra.</option>
+									</select>
 								</div>
 							</div>
 						</div>
@@ -121,6 +140,19 @@ if($_POST){
 										<span class="alert alert-danger"><?php echo $errors['cpassword'] ?> </span>
 									<?php } ?>
 								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="confirm" class="cols-sm-2 control-label">Upload Avatar</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="file" class="form-control" name="avatar" />
+									<br>
+								</div>
+								<?php  if(isset($avatarErrors['avatar'])) {?>
+										<span style="margin-top: 40px" class="alert alert-danger"><?php echo $avatarErrors['avatar'] ?> </span>
+									<?php } ?>
 							</div>
 						</div>
 						<div class="form-group ">
