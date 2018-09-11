@@ -1,15 +1,14 @@
 <?php
 session_start();
-function giveSession(){
-    if(session_status()==0)
+function giveSession()
     {
-        return "session disabled";
-    }elseif(session_status()==1){
-        return "Not Loged";
-    }elseif(session_status()==2){
-        return "Loged";
+        if(isset($_SESSION['username']))
+        {
+            return "Loged";
+        }else{
+            return "Not Loged";
+        }
     }
-}
 
 
 function dd($var)
@@ -90,7 +89,7 @@ function createUser($data)
         'username'=> $_POST['username'],
         'password'=> password_hash($_POST['password'], PASSWORD_DEFAULT),
         'email'=> $_POST['email'],
-        
+        'role' => 1
     ];
     $user['id']=generateId();
     return $user;
@@ -131,24 +130,33 @@ function decodeUsers()
     {
         
         $users[]=json_decode($jsonUser, true);
+        return $users;
     }
 
-    return $users;
+    
     
 }
 
 function findUser(array $data)
 {
-    $users=decodeUsers();
-
-    foreach($users as $user)
-    {
-        if($user['username'] == $data['username'])
-        {    
-            return $user;
-            exit;
+    if(decodeUsers()!= null)
+        {
+            $users=decodeUsers();
+ 
+            foreach($users as $user)
+            {
+                if($user['username'] == $data['username'])
+                {    
+                    return $user;
+                    exit;
+                }
+            }
         }
-    }
+    else
+        {
+            return false;
+        }
+    
     
 }
 
@@ -159,18 +167,25 @@ function checkPassword($data, $foundUser)
 
 function Login($foundUser)
 {
-    $_SESSION['email']=$foundUser['email'];
-    setcookie('email', $foundUser['email'], time()+3600);
+    $_SESSION['username']=$foundUser['username'];
+    $_SESSION['role']=$foundUser['role'];
+    setcookie('username', $foundUser['username'], time()+3600);
 }
+function userRecord($foundUser)
+    {
+    setcookie ('userRecord', $foundUser['username'], time()+(60*60*24*30*12));
+    
+    }
+
 
 function loginController()
 {
-    if(isset($_SESSION['email']))
+    if(isset($_SESSION['username']))
     {
         return true;
-    }elseif(isset($_COOKIE['email']))
+    }elseif(isset($_COOKIE['username']))
     {
-        $_SESSION['email']=$_COOKIE['email'];
+        $_SESSION['username']=$_COOKIE['username'];
         return true;
     }else{
         return false;
@@ -182,7 +197,7 @@ function loginController()
 function logout()
     {
         session_destroy();
-        setcookie('email', "", time()-1);
+        setcookie('username', "", time()-1);
     }
 
 function uploadAvatar($user)
@@ -249,4 +264,11 @@ function uploadAvatar($user)
     }
     
 
+
+
+
+
+
+
+    
 ?>

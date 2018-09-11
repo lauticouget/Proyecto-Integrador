@@ -15,6 +15,10 @@ if($_POST)
         
         if(loginController())
           {
+            if(isset($_POST['userRecord']))
+              {
+                userRecord($foundUser);
+              }
             header('location: index.php');
           }
       }
@@ -22,7 +26,7 @@ if($_POST)
   }
   
 }
-if(isset($_SESSION['email']))
+if(isset($_SESSION['username']))
   {
     header('location: index.php');
   }
@@ -56,13 +60,17 @@ if(isset($_SESSION['email']))
                 <label  class="userypass">Username</label>
             </div>
             <div class="col-xs-4 col-sm-6 col-md-12 col-lg-12 text-center mx-auto">
-                <input  class=" userinput " autofocus type="text" name="username">
+                <input  class=" userinput " autofocus  type="text" name="username">
             </div>
             <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12 mx-auto text-center">
                 <label  class="userypass">password</label>
             </div>
             <div class="col-xs-4 col-sm-6 col-md-12 col-lg-12 text-center mx-auto">
                             <input  class=" userinput " type="password" name="password">
+            </div>
+            <div class=" form-row form-check mx-auto">
+                <input  class="form-check-input"  type="checkbox" name="userRecord">
+                <label class="form-check-label">Recordar Usuario</label>
             </div>
 
             <?php if ($_POST)
@@ -82,13 +90,17 @@ if(isset($_SESSION['email']))
                   } ?>
             
             <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12 mx-auto text-center ">
-                <button class="userbuttons" type="submit">Send</button>
+                <button class="userbuttons" type="submit">Login</button>
             </div >
             <div class="col-xs-4 col-sm-4 col-md-12 col-lg-12 mx-auto text-center ">
                     <button class="userbuttons" type="reset">Cancel</button>
-                    <a id="registrate" style="text-decoration: none; color:black" href="register.php">Registrate</a>
+                    <a class="btn btn-secondary"id="registrate" style="text-decoration: none; color:black" href="register.php">Registrate</a>
             </div >
-        </form>
+            <div style="margin-top: 10px"class="col-xs-4 col-sm-4 col-md-12 col-lg-12 mx-auto text-center ">
+                    <a name="retreivePass" class="btn btn-light" id="olvideContra" href="retreivePass.php">Olvidé mi contraseña</a>
+                  
+            </div >
+        </form >
     </div>
     <footer class=" footer pt-4">
 

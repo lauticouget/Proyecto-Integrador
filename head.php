@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/login.css">
 
     <title>Punto Vet</title>
 </head>
