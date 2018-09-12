@@ -119,6 +119,30 @@ function saveUser($user)
 }
 
 
+function eraseUser($data)
+    {
+        $users=decodeUsers();
+        $data=trim($data);
+        foreach($users as $user)
+            {
+                if($user['username'] == $data)
+                    {
+                        $deletedUser=$user;
+                        $jsonDeletedUser=json_encode($user);
+                        file_put_contents('deleted.users.json', $jsonDeletedUser . PHP_EOL, FILE_APPEND);
+                        unset($user);
+                    }    
+                if(isset($user))
+                    {
+                        $jsonUser=json_encode($user);
+                        $jsonUsers[]=$jsonUser;
+                    }
+            }
+        $fullJson=implode(PHP_EOL, $jsonUsers);
+        file_put_contents('users.json', $fullJson . PHP_EOL);
+    }
+
+
 
 function decodeUsers()
 {
@@ -129,20 +153,42 @@ function decodeUsers()
     foreach($jsonUsers as $jsonUser)
     {
         
-        $users[]=json_decode($jsonUser, true);
-        return $users;
+        $users[]=json_decode($jsonUser, true);        
     }
+    return $users;
+}
 
-    
+function findJsonUser($data)
+{
+    if(decodeUsers()!= null)
+        {
+            strpos($data);
+
+        }    
     
 }
 
+function findUserWhitName($data)
+{
+    if(decodeUsers()!= null)
+        {
+            $users=decodeUsers();   
+            foreach($users as $user)
+            {
+                if($user['username'] == $data)
+                {    
+                    return $user;
+                    exit;
+                }
+            }
+        }    
+    
+}
 function findUser(array $data)
 {
     if(decodeUsers()!= null)
         {
-            $users=decodeUsers();
- 
+            $users=decodeUsers();   
             foreach($users as $user)
             {
                 if($user['username'] == $data['username'])
@@ -151,33 +197,38 @@ function findUser(array $data)
                     exit;
                 }
             }
-        }
-    else
-        {
-            return false;
-        }
-    
+        }    
     
 }
 
 function checkPassword($data, $foundUser)
-{
-    return password_verify($data['password'], $foundUser['password']);
-}
+    {
+        return password_verify($data['password'], $foundUser['password']);
+    }
 
 function Login($foundUser)
-{
-    $_SESSION['username']=$foundUser['username'];
-    $_SESSION['role']=$foundUser['role'];
-    setcookie('username', $foundUser['username'], time()+3600);
-}
+    {
+        $_SESSION['username']=$foundUser['username'];
+        $_SESSION['role']=$foundUser['role'];
+        setcookie('username', $foundUser['username'], time()+3600);
+    }
 function userRecord($foundUser)
     {
     setcookie ('userRecord', $foundUser['username'], time()+(60*60*24*30*12));
     
     }
 
-
+function adminController()
+    {
+        if($_SESSION['role']==7)
+            {
+                return true;
+            }
+            else{
+                return false;
+            }
+        
+    }
 function loginController()
 {
     if(isset($_SESSION['username']))

@@ -28,18 +28,18 @@
     <?php 
     }
     
-    if ($_SESSION['role'] == 7)
-        { ?>
-            <div>
-                <a href="admin.php">Administrar</a>
-            </div>
-        <?php
+    if (isset($_SESSION['username']))
+        {
+            if ($_SESSION['role'] == 7)
+            { ?>
+                <div>
+                    <a href="admin.php">Administrar</a>
+                </div>
+            <?php
+            }
+            ?>
+        <?php 
         }
         ?>
-    
-
-    
-
-    
 
 </nav>
