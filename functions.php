@@ -138,8 +138,44 @@ function eraseUser($data)
                         $jsonUsers[]=$jsonUser;
                     }
             }
-        $fullJson=implode(PHP_EOL, $jsonUsers);
-        file_put_contents('users.json', $fullJson . PHP_EOL);
+        if (count($jsonUsers) > 0)
+            {
+                $fullJson=implode(PHP_EOL, $jsonUsers);
+                file_put_contents('users.json', $fullJson . PHP_EOL);
+            }else{
+                file_put_contents('users.json', "");
+            }
+        
+    }
+function restoreUser($data)
+    {
+        $deletedUsers=decodeDeletedUsers();
+        $data=trim($data);
+        foreach($deletedUsers as $deletedUser)
+            {
+                if($deletedUser['username'] == $data)
+                    {
+                        $user=$deletedUser;
+                        $jsonUser=json_encode($user);
+                        file_put_contents('users.json', $jsonUser . PHP_EOL, FILE_APPEND);
+                        unset($deletedUser);
+                    }    
+
+                if(isset($deletedUser))
+                    {
+                        $jsonDeletedUser=json_encode($deletedUser);
+                        $jsonDeletedUsers[]=$jsonDeletedUser;
+                        
+                    }
+            }
+        if(count($jsonDeletedUsers) > 0)
+        {
+            $fullDeletedJson=implode(PHP_EOL, $jsonDeletedUsers);
+            file_put_contents('deleted.users.json', $fullDeletedJson . PHP_EOL);
+        }else{
+            file_put_contents('deleted.users.json', "");
+        }
+        
     }
 
 
@@ -147,6 +183,19 @@ function eraseUser($data)
 function decodeUsers()
 {
     $jsonFile = file_get_contents('users.json');
+    $jsonUsers = explode(PHP_EOL , $jsonFile);
+    array_pop($jsonUsers);
+
+    foreach($jsonUsers as $jsonUser)
+    {
+        
+        $users[]=json_decode($jsonUser, true);        
+    }
+    return $users;
+}
+function decodeDeletedUsers()
+{
+    $jsonFile = file_get_contents('deleted.users.json');
     $jsonUsers = explode(PHP_EOL , $jsonFile);
     array_pop($jsonUsers);
 
